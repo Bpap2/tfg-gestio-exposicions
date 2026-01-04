@@ -1,0 +1,13 @@
+# Decisions tècniques
+
+## Backend
+- Stack: Java + Spring Boot
+- Motiu: estàndard, productiu, ben documentat, adequat per API REST
+
+## Base de dades
+- PostgreSQL
+- Migracions: Flyway
+- Motiu: traçabilitat i control d’esquema (TFG-friendly)
+
+## Frontend
+- Pendent de decidir (es pot iniciar amb una UI mínima més endavant)

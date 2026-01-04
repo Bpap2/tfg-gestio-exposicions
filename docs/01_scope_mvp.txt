@@ -1,0 +1,20 @@
+# MVP - Gestió d'exposicions (TFG)
+
+## Objectiu
+Construir una primera versió funcional (no orientada a disseny final) per validar el pas d'Access a una aplicació web.
+
+## Inclòs a l’MVP
+1. Crear/editar/llistar Exposicions
+2. Crear/editar/llistar Obres (fitxa mínima)
+3. Crear/editar/llistar Prestador
+4. Assignar obres a una exposició amb estat: pendent / confirmada / denegada / alternativa
+5. Generació d’informes:
+   - Informe de préstec (per prestador)
+   - Informe de coordinació (llistat ampli)
+
+## Fora de l’MVP (per fases posteriors)
+- Gestió d’usuaris i permisos avançats
+- Concurrència real-time
+- Alertes / calendari avançat
+- Itineràncies complexes
+- Resta d’informes (transport, conservació, etc.)
