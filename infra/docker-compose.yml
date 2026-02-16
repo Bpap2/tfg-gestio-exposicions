@@ -3,11 +3,11 @@ services:
     image: postgres:17
     container_name: tfg_postgres
     environment:
-      POSTGRES_DB: tfg_db
+      POSTGRES_DB: tfg_mvp
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "5433:5432"
+      - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 

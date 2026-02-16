@@ -104,16 +104,24 @@ public class ExhibitionController {
 
     @PostMapping("/{id}/artworks/{artworkId}")
     public ExhibitionDTO addArtwork(@PathVariable Long id, @PathVariable Long artworkId) {
-        var e = exhibitionRepo.findById(id).orElseThrow(() -> new NotFoundException("Exhibition not found"));
-        var a = artworkRepo.findById(artworkId).orElseThrow(() -> new NotFoundException("Artwork not found"));
+        var e = exhibitionRepo.findByIdWithArtworks(id)
+                .orElseThrow(() -> new NotFoundException("Exhibition not found"));
+
+        var a = artworkRepo.findById(artworkId)
+                .orElseThrow(() -> new NotFoundException("Artwork not found"));
+
         e.getArtworks().add(a);
         return toDto(exhibitionRepo.save(e));
     }
 
     @DeleteMapping("/{id}/artworks/{artworkId}")
     public ExhibitionDTO removeArtwork(@PathVariable Long id, @PathVariable Long artworkId) {
-        var e = exhibitionRepo.findById(id).orElseThrow(() -> new NotFoundException("Exhibition not found"));
-        var a = artworkRepo.findById(artworkId).orElseThrow(() -> new NotFoundException("Artwork not found"));
+        var e = exhibitionRepo.findByIdWithArtworks(id)
+                .orElseThrow(() -> new NotFoundException("Exhibition not found"));
+
+        var a = artworkRepo.findById(artworkId)
+                .orElseThrow(() -> new NotFoundException("Artwork not found"));
+
         e.getArtworks().remove(a);
         return toDto(exhibitionRepo.save(e));
     }

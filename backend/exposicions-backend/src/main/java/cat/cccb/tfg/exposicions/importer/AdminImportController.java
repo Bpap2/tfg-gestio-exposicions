@@ -1,7 +1,9 @@
 package cat.cccb.tfg.exposicions.importer;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.web.bind.annotation.*;
 
+@ConditionalOnProperty(name = "dump.enabled", havingValue = "true")
 @RestController
 @RequestMapping("/api/admin")
 public class AdminImportController {
